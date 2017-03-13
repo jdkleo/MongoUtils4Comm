@@ -25,7 +25,7 @@ public class TestCase {
 	}
 
 //	 @Test
-	public void copytest() {
+	public void copyTest() {
 		MongoDao mc = MongoConnectionFactory.getDao();
 		long s = System.currentTimeMillis();
 		List<String> query = new ArrayList<String>();
@@ -42,7 +42,7 @@ public class TestCase {
 	}
 
 //	@Test
-	public void inserttest() {
+	public void insertTest() {
 		MongoDao mc = MongoConnectionFactory.getDao("10.32.8.22", 28018, "local", "test");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("aaa", "aaa");
@@ -55,7 +55,7 @@ public class TestCase {
 	}
 
 //	 @Test
-	public void querytest() {
+	public void queryTest() {
 		MongoDao mc = MongoConnectionFactory.getDao("10.32.8.22", 28018, "local", "test");
 		long s = System.currentTimeMillis();
 		List<String> query = new ArrayList<String>();
@@ -91,7 +91,7 @@ public class TestCase {
 	}
 
 	 @Test
-	public void maprtest() {
+	public void mapreduceTest() {
 		MongoDao mc = MongoConnectionFactory.getDao("10.32.7.28", 27017, "savemongo", "sic_contrast_0_20151017_139_1");
 		String mapfun = "function Map() {emit( this.key,{type:this.sourcesys, qty: this.goodsnum,qty1:0,qty2:0,qty0:0,res1:'0',res0:'0'} ); }";
 		String reducefun = "function Reduce(key, values) {var reduced = {type:'',qty:0,qty1:0,qty2:0,qty0:0,res1:'0',res0:'0'};values.forEach(function(val){if(val.type=='1'){   reduced.qty1+=val.qty; }  if(val.type=='2'){   reduced.qty2+=val.qty;}  if (val.type=='0'){   reduced.qty0+=val.qty; }reduced.qty2+=val.qty2;  reduced.qty0+=val.qty0;reduced.qty1+=val.qty1;}); return reduced;}";
