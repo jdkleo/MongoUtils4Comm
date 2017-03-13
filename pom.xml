@@ -52,11 +52,5 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>odianyun-snapshots</id>
-            <name>snapshots</name>
-            <url>http://120.92.227.70:8081/content/repositories/snapshots/</url>
-        </repository>
-    </distributionManagement>
+   
 </project>
