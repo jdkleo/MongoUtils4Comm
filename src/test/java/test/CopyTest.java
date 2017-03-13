@@ -10,7 +10,7 @@ import com.odianyun.architecture.mongo.MongoDao;
 
 public class CopyTest {
 	@Test
-	public void copytest(){
+	public void copyTest(){
 		try {
 			MongoDao md = MongoConnectionFactory.getDao("192.168.20.169:27017", "", "", "chae");
 			List<String> query = new ArrayList<String>();
